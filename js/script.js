@@ -22,7 +22,7 @@ Ragionamento Base
 const registeredUsers = [
   {
     email: "francescodicorpo30@gmail.com",
-    password: "12345a",
+    password: "12345",
   },
   {
     email: "pinco@gmail.com",
@@ -38,18 +38,18 @@ const registeredUsers = [
   },
 ]
 const formElement = document.querySelector("#login-form")
-const LoginResult = document.querySelector("#login-result")
 formElement.addEventListener("submit", (e) => {
   e.preventDefault()
   const emailInput = document.querySelector("#email")
   const passwordInput = document.querySelector("#password")
   let emailValue = emailInput.value.toLowerCase()
   let passwordValue = passwordInput.value
+  const loginResult = document.querySelector("#login-result")
+  const errorResult = document.querySelector("#error")
   let authorizedUser = false
 
   registeredUsers.forEach((user) => {
     const userEmailLower = user.email.toLowerCase()
-
     if (userEmailLower == emailValue && passwordValue == user.password) {
       authorizedUser = true
     }
@@ -57,8 +57,10 @@ formElement.addEventListener("submit", (e) => {
 
   if (authorizedUser == true) {
     formElement.style.display = "none"
-    LoginResult.innerHTML = " 🥳🎉 hai effettuato l'accesso"
+    loginResult.innerHTML = " hai effettuato l'accesso"
   } else {
-    LoginResult.innerHTML = " 😒 hai sbagliato le credenziali Baccalà"
+    emailInput.style.outline = "1px solid red"
+    passwordInput.style.outline = "1px solid red"
+    errorResult.innerHTML = " email o password incorretti"
   }
 })
