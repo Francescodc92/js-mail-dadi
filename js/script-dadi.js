@@ -24,8 +24,8 @@ const cpuDisplay = document.querySelector("#cpu-display")
 const winnerDisplay = document.querySelector("#winner")
 
 startButton.addEventListener("click", () => {
-  const numberUser = Math.floor(Math.random() * 6 + 1)
-  const numberCPU = Math.floor(Math.random() * 6 + 1)
+  const numberUser = Math.floor(Math.random() * 6) + 1
+  const numberCPU = Math.floor(Math.random() * 6) + 1
 
   userDisplay.classList.add("animated")
   cpuDisplay.classList.add("animated")
