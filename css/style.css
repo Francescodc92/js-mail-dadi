@@ -18,3 +18,71 @@ span#error {
   color: red;
   margin-bottom: 10px;
 }
+
+/*-----------
+Exercize 2
+-----------*/
+.my-container-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 30px;
+}
+
+.my-container-game .display-wrapper > div {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.my-container-game .display-wrapper > div#user-display.animated {
+  animation-name: rotate;
+  animation-duration: 1s;
+}
+
+.my-container-game .display-wrapper > div#cpu-display.animated {
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-direction: reverse;
+}
+
+.my-container-game .display-wrapper > span {
+  font-size: 20px;
+}
+
+#winner-display {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+#winner-display #winner {
+  color: green;
+  font-weight: 700;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

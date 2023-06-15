@@ -19,16 +19,33 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 */
 const startButton = document.querySelector("#start")
+const userDisplay = document.querySelector("#user-display")
+const cpuDisplay = document.querySelector("#cpu-display")
+const winnerDisplay = document.querySelector("#winner")
 
 startButton.addEventListener("click", () => {
   const numberUser = Math.floor(Math.random() * 6 + 1)
   const numberCPU = Math.floor(Math.random() * 6 + 1)
-  console.log(numberUser, numberCPU)
+
+  userDisplay.classList.add("animated")
+  cpuDisplay.classList.add("animated")
+  setTimeout(() => {
+    userDisplay.classList.remove("animated")
+    cpuDisplay.classList.remove("animated")
+  }, 1000)
+  userDisplay.innerHTML = numberUser
+  cpuDisplay.innerHTML = numberCPU
   if (numberCPU > numberUser) {
-    console.log("hai perso")
+    winnerDisplay.innerHTML = "Cpu"
+    userDisplay.style.backgroundColor = "rgba(255, 0, 0, 0.486)"
+    cpuDisplay.style.backgroundColor = "rgba(0, 128, 0, 0.521)"
   } else if (numberUser > numberCPU) {
-    console.log("hai vinto")
+    winnerDisplay.innerHTML = "User"
+    userDisplay.style.backgroundColor = "rgba(0, 128, 0, 0.521)"
+    cpuDisplay.style.backgroundColor = "rgba(255, 0, 0, 0.486)"
   } else {
-    console.log("parità")
+    winnerDisplay.innerHTML = "Pareggio"
+    userDisplay.style.backgroundColor = "rgba(255, 0, 0, 0.486)"
+    cpuDisplay.style.backgroundColor = "rgba(255, 0, 0, 0.486)"
   }
 })
