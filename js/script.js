@@ -19,7 +19,6 @@ Ragionamento Base
         - svuotare il form per permettergli di inserire un nuovo valore 
 
 */
-const formElement = document.querySelector("#login-form")
 const registeredUsers = [
   {
     email: "francescodicorpo30@gmail.com",
@@ -38,13 +37,14 @@ const registeredUsers = [
     password: "123645abg",
   },
 ]
-
+const formElement = document.querySelector("#login-form")
+const LoginResult = document.querySelector("#login-result")
 formElement.addEventListener("submit", (e) => {
   e.preventDefault()
   const emailInput = document.querySelector("#email")
   const passwordInput = document.querySelector("#password")
-  const emailValue = emailInput.value.toLowerCase()
-  const passwordValue = passwordInput.value
+  let emailValue = emailInput.value.toLowerCase()
+  let passwordValue = passwordInput.value
   let authorizedUser = false
 
   registeredUsers.forEach((user) => {
@@ -56,8 +56,9 @@ formElement.addEventListener("submit", (e) => {
   })
 
   if (authorizedUser == true) {
-    console.log("hai effettuato l'accesso")
+    formElement.style.display = "none"
+    LoginResult.innerHTML = " 🥳🎉 hai effettuato l'accesso"
   } else {
-    console.log("hai sbagliato l'email Bacalà")
+    LoginResult.innerHTML = " 😒 hai sbagliato le credenziali Baccalà"
   }
 })
