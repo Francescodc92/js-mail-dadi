@@ -1,6 +1,7 @@
 > Esercizio Mail / Dadi
 
 ![preview](./.github/preview.png)
+![preview](./.github/preview-dadi.png)
 
 ## Mail / Dadi
 
