@@ -19,3 +19,45 @@ Ragionamento Base
         - svuotare il form per permettergli di inserire un nuovo valore 
 
 */
+const formElement = document.querySelector("#login-form")
+const registeredUsers = [
+  {
+    email: "francescodicorpo30@gmail.com",
+    password: "12345a",
+  },
+  {
+    email: "pinco@gmail.com",
+    password: "6789x",
+  },
+  {
+    email: "pallo@gmail.com",
+    password: "123456ax",
+  },
+  {
+    email: "hoPocaCreativitaOggi@gmail.com",
+    password: "123645abg",
+  },
+]
+
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault()
+  const emailInput = document.querySelector("#email")
+  const passwordInput = document.querySelector("#password")
+  const emailValue = emailInput.value.toLowerCase()
+  const passwordValue = passwordInput.value
+  let authorizedUser = false
+
+  registeredUsers.forEach((user) => {
+    const userEmailLower = user.email.toLowerCase()
+
+    if (userEmailLower == emailValue && passwordValue == user.password) {
+      authorizedUser = true
+    }
+  })
+
+  if (authorizedUser == true) {
+    console.log("hai effettuato l'accesso")
+  } else {
+    console.log("hai sbagliato l'email Bacalà")
+  }
+})
