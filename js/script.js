@@ -16,7 +16,7 @@ Ragionamento Base
         - ridirezionare l'utente ad una pagina per simulare l'accesso a qualche sito, oppure eliminare il form dall'html e inserire un messaggio di benvenuto
   - altrimenti , se il valore non coicide con nessuna delle email presenti nell'array 
         - segnalare all'utente che non ha il permesso di accedere 
-        - svuotare il form per permettergli di inserire un nuovo valore 
+        
 
 */
 const registeredUsers = [

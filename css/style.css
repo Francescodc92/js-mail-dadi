@@ -10,6 +10,7 @@
   max-width: 800px;
   padding-top: 50px;
   padding-inline: 20px;
+  margin-inline: auto;
 }
 span#error {
   font-size: 14px;
